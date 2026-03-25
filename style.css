@@ -1,0 +1,9 @@
+/* Custom base styles ensuring parity with Next.js rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}

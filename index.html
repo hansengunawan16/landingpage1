@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpex Style Co. | Premium Look. Accessible Price.</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS (CDN for static demo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'alpex-black': '#0A0A0B',
+                        'alpex-white': '#FAFAFA',
+                        'alpex-blue': '#0033FF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-alpex-white text-alpex-black font-sans antialiased min-h-screen">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 bg-transparent text-white">
+        <div class="max-w-[1440px] mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="#" class="font-display font-black text-2xl tracking-tighter">
+                    ALPEX<span class="text-alpex-blue">.</span>
+                </a>
+                <span class="px-2 py-0.5 bg-amber-400 text-black text-[10px] font-black tracking-widest rounded-full animate-pulse">
+                    DEMO
+                </span>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8 font-display font-bold text-sm tracking-widest">
+                <a href="#" class="hover:text-alpex-blue transition-colors text-alpex-blue underline underline-offset-8 decoration-2">HOME</a>
+                <a href="#" class="hover:text-alpex-blue transition-colors">MEN</a>
+                <a href="#" class="hover:text-alpex-blue transition-colors">WOMEN</a>
+                <a href="#" class="hover:text-alpex-blue transition-colors">SHOES</a>
+                <a href="#" class="hover:text-alpex-blue transition-colors">CLOTHING</a>
+                <a href="#" class="hover:text-alpex-blue transition-colors">ACCESSORIES</a>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <button class="hover:text-alpex-blue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button class="relative hover:text-alpex-blue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white text-black border-b border-gray-100 p-8 flex flex-col space-y-6 font-display font-black text-2xl md:hidden">
+            <a href="#" class="text-alpex-blue">HOME</a>
+            <a href="#">MEN</a>
+            <a href="#">WOMEN</a>
+            <a href="#">SHOES</a>
+            <a href="#">CLOTHING</a>
+            <a href="#">ACCESSORIES</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-gray-900">
+            <div class="absolute inset-0 z-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            
+            <div class="relative z-10 text-center text-white px-6">
+                <h2 class="font-display font-black text-5xl md:text-8xl tracking-tight mb-4">
+                    EVOLVE YOUR <br /> 
+                    <span class="text-alpex-blue italic">STREET</span> LOGIC
+                </h2>
+                <p class="font-sans text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90">
+                    Premium aesthetics. Engineered performance. Accessible price points.
+                    Welcome to the new standard of streetwear.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <a href="#" class="bg-alpex-blue text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition w-full md:w-auto">
+                        SHOP NEW COLLECTION
+                    </a>
+                    <a href="#" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-black transition w-full md:w-auto">
+                        OUR STORY
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="py-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                <div class="max-w-xl">
+                    <h3 class="font-display font-black text-4xl md:text-6xl tracking-tighter mb-4">
+                        THE ESSENTIALS<span class="text-alpex-blue">.</span>
+                    </h3>
+                    <p class="text-gray-500 font-medium">
+                        Curated pieces designed for daily motion. Built to last, styled to lead.
+                    </p>
+                </div>
+                <a href="#" class="font-display font-bold border-b-2 border-alpex-black pb-1 hover:text-alpex-blue hover:border-alpex-blue transition-all">
+                    VIEW ALL PRODUCTS
+                </a>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Product 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[3/4] bg-gray-100 rounded-lg mb-4 overflow-hidden relative shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800" alt="ALPEX CORE SERIES 01" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <h4 class="font-display font-black text-lg">ALPEX CORE SERIES 01</h4>
+                    <p class="text-gray-500 text-sm mb-2">Shoes / Streetwear</p>
+                    <p class="font-display font-bold text-xl">$79.99</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[3/4] bg-gray-100 rounded-lg mb-4 overflow-hidden relative shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <img src="https://images.unsplash.com/photo-1523275335684-3ef3049ca3ad?auto=format&fit=crop&q=80&w=800" alt="ALPEX CORE SERIES 02" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <h4 class="font-display font-black text-lg">ALPEX CORE SERIES 02</h4>
+                    <p class="text-gray-500 text-sm mb-2">Accessories / Watch</p>
+                    <p class="font-display font-bold text-xl">$89.99</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[3/4] bg-gray-100 rounded-lg mb-4 overflow-hidden relative shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800" alt="ALPEX CORE SERIES 03" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <h4 class="font-display font-black text-lg">ALPEX CORE SERIES 03</h4>
+                    <p class="text-gray-500 text-sm mb-2">Accessories / Bag</p>
+                    <p class="font-display font-bold text-xl">$69.99</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Message Section -->
+        <section class="bg-alpex-black text-alpex-white py-32 text-center overflow-hidden relative">
+            <div class="relative z-10 px-6">
+                <h2 class="font-display font-black text-4xl md:text-7xl tracking-tighter mb-8 leading-none">
+                    PREMIUM LOOK.<br />
+                    <span class="text-alpex-blue/80">ACCESSIBLE PRICE.</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-12">
+                    Why settle for mass-market mediocrity or over-priced exclusivity? 
+                    Alpex delivers the bridge between luxury design and everyday accessibility.
+                </p>
+            </div>
+            <!-- Background Decorative Text -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] select-none whitespace-nowrap font-black text-[20vw] leading-none">
+                ALPEX STYLE CO.
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
