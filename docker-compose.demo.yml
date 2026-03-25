@@ -1,0 +1,60 @@
+services:
+  demo-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4001
+      - INTERNAL_API_URL=http://demo-backend:4000
+    networks:
+      - alpex-demo-network
+    depends_on:
+      - demo-backend
+
+  demo-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4001:4000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - DB_HOST=demo-database
+      - DB_PORT=5432
+      - DB_USER=alpex_demo_user
+      - DB_PASSWORD=alpex_demo_pass
+      - DB_NAME=alpex_demo_db
+      - MIDTRANS_IS_PRODUCTION=false
+      - MIDTRANS_SERVER_KEY=SB-Mid-server-placeholder-demo
+      - MIDTRANS_CLIENT_KEY=SB-Mid-client-placeholder-demo
+    networks:
+      - alpex-demo-network
+    depends_on:
+      - demo-database
+
+  demo-database:
+    image: postgres:16
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=alpex_demo_user
+      - POSTGRES_PASSWORD=alpex_demo_pass
+      - POSTGRES_DB=alpex_demo_db
+    volumes:
+      - demo_postgres_data:/var/lib/postgresql/data
+    networks:
+      - alpex-demo-network
+
+networks:
+  alpex-demo-network:
+    driver: bridge
+
+volumes:
+  demo_postgres_data:
